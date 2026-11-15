@@ -1,0 +1,275 @@
+/**
+ * layout.css - Bố cục không gian & Lưới (Spatial Grid & Rhythm)
+ * Thiết kế chuẩn Swiss Editorial Academic: Nhịp điệu thoáng đãng, phân cấp rõ ràng
+ */
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.75rem;
+}
+
+.section {
+  padding: 6.5rem 0;
+}
+
+.section-header {
+  max-width: 780px;
+  margin: 0 auto 3.75rem;
+  text-align: center;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+  color: var(--color-ink);
+  text-wrap: balance;
+}
+
+.roman-prefix {
+  color: var(--color-primary);
+  font-weight: 800;
+  margin-right: 0.25rem;
+  font-family: var(--font-display);
+}
+
+.section-desc {
+  font-size: 1.05rem;
+  color: var(--color-ink-muted);
+  line-height: 1.7;
+  max-width: 68ch;
+  margin: 0 auto;
+  text-wrap: pretty;
+}
+
+/* Header Navbar */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background-color: var(--color-ground);
+  border-bottom: var(--border-hairline);
+  transition: padding var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.site-header.scrolled {
+  background-color: rgba(250, 248, 245, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="dark"] .site-header.scrolled {
+  background-color: rgba(8, 9, 15, 0.92);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 74px;
+}
+
+/* Grids */
+.hero-section {
+  padding: 4.5rem 0 5.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+/* Proof Strip / Unified Metric Ribbon (Image 2 standard) */
+.stats-strip {
+  padding: 1.5rem 0 5rem;
+}
+
+.stats-unified-card {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: var(--color-surface);
+  border: var(--border-hairline);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.stat-unified-col {
+  padding: 2.25rem 2rem;
+  position: relative;
+  border-right: var(--border-hairline);
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-unified-col:last-child {
+  border-right: none;
+}
+
+/* Accent icon & badge tints */
+.accent-purple .stat-icon {
+  color: #6366f1;
+}
+
+.accent-emerald .stat-icon {
+  color: #10b981;
+}
+
+.accent-orange .stat-icon {
+  color: #f59e0b;
+}
+
+.accent-slate .stat-icon {
+  color: #64748b;
+}
+
+/* Section Grids */
+.roadmap-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.mentors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.consult-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4.5rem;
+  align-items: flex-start;
+}
+
+/* Footer Layout */
+.site-footer {
+  background-color: var(--color-ground);
+  border-top: var(--border-hairline);
+  padding: 5rem 0 0;
+}
+
+.footer-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 4rem;
+  padding-bottom: 4rem;
+}
+
+.footer-bottom-bar {
+  border-top: var(--border-hairline);
+  padding: 1.75rem 0;
+  font-size: 0.85rem;
+  color: var(--color-ink-muted);
+}
+
+.footer-bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1080px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+  .stats-unified-card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stat-unified-col:nth-child(2) {
+    border-right: none;
+  }
+  .stat-unified-col:nth-child(1),
+  .stat-unified-col:nth-child(2) {
+    border-bottom: var(--border-hairline);
+  }
+  .roadmap-timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .topics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .topics-grid > .featured-card {
+    grid-column: span 2;
+  }
+  .pillar-grid,
+  .mentors-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4.5rem 0;
+  }
+  .nav-links,
+  .btn-header-cta {
+    display: none;
+  }
+  .hamburger-btn {
+    display: flex;
+  }
+  .hero-display-title {
+    font-size: 2.35rem;
+  }
+  .hero-cta-group {
+    flex-direction: column;
+  }
+  .stats-unified-card {
+    grid-template-columns: 1fr;
+  }
+  .stat-unified-col {
+    border-right: none;
+    border-bottom: var(--border-hairline);
+  }
+  .stat-unified-col:last-child {
+    border-bottom: none;
+  }
+  .roadmap-timeline,
+  .topics-grid,
+  .pillar-grid,
+  .mentors-grid {
+    grid-template-columns: 1fr;
+  }
+  .topics-grid > .featured-card {
+    grid-column: span 1;
+  }
+  .consult-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .form-row-2 {
+    grid-template-columns: 1fr;
+  }
+  .footer-layout {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,105 @@
+<!-- Lớp mờ nền chung cho Drawers (Backdrop) -->
+<div id="drawer-overlay" class="drawer-overlay" aria-hidden="true"></div>
+
+<!-- Thanh ray ScrollSpy số La Mã bên lề trái màn hình (Image 2 standard) -->
+<nav class="scrollspy-rail" aria-label="Định vị nhanh các phân mục">
+  <a href="#hero-section" class="rail-item active" data-rail-id="0" title="Đầu trang">0</a>
+  <a href="#roadmap" class="rail-item" data-rail-id="I" title="I. Lộ trình">I</a>
+  <a href="#topics" class="rail-item" data-rail-id="II" title="II. Kho đề tài">II</a>
+  <a href="#about" class="rail-item" data-rail-id="III" title="III. Phương pháp">III</a>
+  <a href="#mentors" class="rail-item" data-rail-id="IV" title="IV. Review">IV</a>
+  <a href="#faq" class="rail-item" data-rail-id="V" title="V. FAQ">V</a>
+  <a href="#consultation" class="rail-item" data-rail-id="VI" title="VI. Tư vấn">VI</a>
+</nav>
+
+<!-- Thanh Dock điều hướng nổi thông minh phía dưới màn hình (Image 2 standard) -->
+<div id="floating-bottom-dock" class="floating-dock" aria-label="Thanh điều hướng nhanh">
+  <button type="button" id="dock-btn-top" class="dock-top-btn" title="Cuộn lên đầu trang" aria-label="Về đầu trang">&uarr;</button>
+  <a href="#roadmap" class="dock-btn hide-on-mobile">I. Lộ trình</a>
+  <a href="#topics" class="dock-btn">II. Kho đề tài</a>
+  <a href="#about" class="dock-btn hide-on-mobile">III. Phương pháp</a>
+  <a href="#mentors" class="dock-btn hide-on-mobile">IV. Review</a>
+  <a href="#faq" class="dock-btn hide-on-mobile">V. FAQ</a>
+  <a href="#consultation" class="dock-btn dock-cta">Đăng ký tư vấn &rarr;</a>
+</div>
+
+<!-- Mobile Navigation Drawer -->
+<aside id="mobile-drawer" class="mobile-drawer" aria-label="Menu di động">
+  <div class="drawer-header">
+    <div class="brand">
+      <div class="brand-badge">N</div>
+      <div class="brand-text">
+        <div class="brand-row">
+          <span class="brand-title">NOVA</span>
+          <span class="brand-chip">NCKH 2026</span>
+        </div>
+      </div>
+    </div>
+    <button id="drawer-close" class="btn-icon btn-close" aria-label="Đóng menu">
+      &times;
+    </button>
+  </div>
+
+  <nav class="drawer-nav">
+    <a href="#roadmap" class="drawer-link">Lộ trình 4 giai đoạn</a>
+    <a href="#topics" class="drawer-link">Kho hướng đề tài</a>
+    <a href="#about" class="drawer-link">Phương pháp luận</a>
+    <a href="#mentors" class="drawer-link">Review từ sinh viên</a>
+    <a href="#faq" class="drawer-link">Câu hỏi thường gặp</a>
+    <a href="#consultation" class="drawer-link">Đăng ký tư vấn</a>
+  </nav>
+
+  <div class="drawer-footer">
+    <a href="#consultation" class="btn btn-primary btn-full drawer-link">Nhận tư vấn đề tài 1:1 &rarr;</a>
+  </div>
+</aside>
+
+<!-- Sổ tay Đề tài Quan tâm Drawer (Wishlist / Bookmarks) -->
+<aside id="notebook-drawer" class="notebook-drawer" aria-label="Sổ tay đề tài nghiên cứu đã lưu">
+  <div class="drawer-header">
+    <div>
+      <h3 style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; margin: 0;">Sổ tay đề tài</h3>
+      <small style="color: var(--color-ink-muted);">Đã lưu <span id="notebook-items-count">0</span> đề tài</small>
+    </div>
+    <button id="notebook-close-x" class="btn-icon btn-close" aria-label="Đóng sổ tay">&times;</button>
+  </div>
+
+  <div id="notebook-items-list" class="notebook-drawer-body">
+    <!-- Render dynamic topics list by wishlist.js -->
+  </div>
+
+  <div class="notebook-drawer-footer">
+    <button type="button" id="btn-clear-notebook" class="btn btn-secondary btn-sm" title="Xóa tất cả đề tài trong sổ tay">
+      Xóa hết
+    </button>
+    <a href="#consultation" id="btn-consult-saved-topics" class="btn btn-primary btn-sm btn-full">
+      Tư vấn các đề tài này &rarr;
+    </a>
+  </div>
+</aside>
+
+<!-- Modal Chi Tiết Hướng Đề Tài NCKH -->
+<div id="topic-detail-modal" class="modal-backdrop-wrap" role="dialog" aria-modal="true" aria-labelledby="modal-topic-title">
+  <div id="modal-backdrop-close" class="modal-click-surface"></div>
+
+  <div class="modal-container-card">
+    <div class="modal-card-header">
+      <h3 id="modal-topic-title">Chi tiết Đề tài Nghiên cứu</h3>
+      <button type="button" id="modal-close-x" class="btn-icon btn-close" aria-label="Đóng hộp thoại">&times;</button>
+    </div>
+
+    <div id="modal-topic-content" class="modal-card-body">
+      <!-- Dynamic render by courses.js -->
+    </div>
+
+    <div class="modal-card-footer">
+      <button type="button" id="modal-btn-dismiss" class="btn btn-secondary">Đóng</button>
+      <button type="button" id="modal-btn-choose" class="btn btn-primary">Chọn đề tài này &amp; Đăng ký tư vấn</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast Thông Báo Góc Màn Hình (Feedback Toast Notification) -->
+<div id="toast-notification" class="toast-card" role="status" aria-live="polite">
+  <span id="toast-text-msg">Thông báo thành công!</span>
+</div>

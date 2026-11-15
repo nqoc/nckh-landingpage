@@ -1,0 +1,91 @@
+/**
+ * tokens.css - Bảng mã màu & Tokens thiết kế: Swiss Editorial Academic
+ * Phong cách Tạp chí Khoa học Đương đại: Sang trọng, sắc sảo, tương phản cao WCAG AAA
+ */
+
+:root {
+  /* Nền giấy lưu trữ nghiên cứu cao cấp (Archival Cotton Paper) */
+  --color-ground: #faf8f5;
+  --color-surface: #ffffff;
+  --color-surface-subtle: #f2efe9;
+  --color-surface-glass: rgba(255, 255, 255, 0.85);
+
+  /* Màu mực đen in học thuật (Obsidian Print Ink) */
+  --color-ink: #0a0b12;
+  --color-ink-muted: #484b5c;
+  --color-ink-faint: #7a7e94;
+
+  /* Màu xanh Quốc tế Thụy Sĩ (International Swiss Blue) */
+  --color-primary: #143dc2;
+  --color-primary-hover: #0d2ca0;
+  --color-primary-subtle: #eef2fd;
+  --color-primary-glow: rgba(20, 61, 194, 0.18);
+
+  /* Dấu triện đỏ thẩm định (Peer-Review Terracotta Stamp) */
+  --color-terracotta: #d63d20;
+  --color-terracotta-subtle: #fbeee9;
+
+  /* Xanh lá kiểm định thành công (Verified Emerald) */
+  --color-sage: #187948;
+  --color-sage-subtle: #ebf5ee;
+
+  /* Đường viền kim loại mảnh 1px */
+  --border-hairline: 1px solid rgba(10, 11, 18, 0.1);
+  --border-subtle: 1px solid rgba(10, 11, 18, 0.05);
+  --border-focus: 2px solid var(--color-primary);
+
+  /* Bóng đổ mềm đa tầng (Multi-layered ambient shadows) */
+  --shadow-sm: 0 1px 3px rgba(10, 11, 18, 0.04), 0 1px 2px rgba(10, 11, 18, 0.02);
+  --shadow-md: 0 4px 16px rgba(10, 11, 18, 0.06), 0 1px 3px rgba(10, 11, 18, 0.04);
+  --shadow-lg: 0 16px 40px rgba(10, 11, 18, 0.08), 0 4px 12px rgba(10, 11, 18, 0.04);
+  --shadow-glow: 0 0 30px rgba(20, 61, 194, 0.2);
+
+  /* Bo góc Bento hiện đại */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  /* Font chữ học thuật & Khối giao diện hiện đại */
+  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', Consolas, monospace;
+
+  /* Chuyển động vật lý mượt mà (Exponential deceleration easing - Impeccable standard) */
+  --transition-fast: 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-theme="dark"] {
+  /* Nền không gian sâu tối (Deep Space Obsidian) */
+  --color-ground: #08090f;
+  --color-surface: #10121b;
+  --color-surface-subtle: #171b28;
+  --color-surface-glass: rgba(16, 18, 27, 0.85);
+
+  --color-ink: #f4f6fd;
+  --color-ink-muted: #9aa0b8;
+  --color-ink-faint: #61667d;
+
+  --color-primary: #3d75f5;
+  --color-primary-hover: #6392f7;
+  --color-primary-subtle: rgba(61, 117, 245, 0.16);
+  --color-primary-glow: rgba(61, 117, 245, 0.28);
+
+  --color-terracotta: #f06143;
+  --color-terracotta-subtle: rgba(240, 97, 67, 0.16);
+
+  --color-sage: #2eb872;
+  --color-sage-subtle: rgba(46, 184, 114, 0.16);
+
+  --border-hairline: 1px solid rgba(255, 255, 255, 0.1);
+  --border-subtle: 1px solid rgba(255, 255, 255, 0.05);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.75);
+  --shadow-glow: 0 0 35px rgba(61, 117, 245, 0.35);
+}
